@@ -32,7 +32,7 @@ local function LoadAsset(fileName, link : string)
     local res = isfile(BaseFile.. fileName)
     if not res then
         res = game:HttpGet(link)
-        writefile(BaseFile.. fileName)
+        writefile(BaseFile.. fileName, res)
     end
     if res then
         return getcustomasset(BaseFile.. fileName)
